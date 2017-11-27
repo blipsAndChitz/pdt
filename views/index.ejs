@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="public/style.css">
+      <link rel="stylesheet" href="public/animate.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link rel="stylesheet" href="public/font-awesome/css/font-awesome.min.css">      
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+      <title>FairView | App</title>
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-8 animated fadeInLeft" id="map-container">
+               <div id="map"></div>
+            </div>
+            <div class="col-lg-4 sidebar">
+                <div class="logo animated fadeInRight"> 
+                    <h1><b><i class="fa fa-map-marker" aria-hidden="true"></i>Fiar</b>View</h1>
+                    <p>Look, how bad your future neighborhood could have been!</p>
+                </div>
+                <form>
+                  <div class="form-group animated fadeInRight">
+                     <label for="location">Enter Location:</label>
+                     <input type="text" class="form-control input-box" id="location">
+                     <small class="form-text" id="messageLocation">*Please enter address.</small>
+                     <label for="radius">Enter Radius:</label>
+                     <input type="text" class="form-control input-box" id="radius">
+                     <small class="form-text" id="messageRadius">*Please enter radius in meters.</small>
+                  </div>
+               </form>
+               <div class="button-group animated fadeInRight">
+                <button type="submit" class="btn btn-outline-success" onclick="getGreenAreas()">Green Areas</button>
+                <button type="submit" class="btn btn-outline-danger" onclick="getAirPolution()">Air Pollution</button>
+                <button type="submit" class="btn btn-outline-warning" onclick="getNoisePolution()">Noise Pollution</button>
+                <button type="submit" class="btn btn-outline-secondary" onclick="eraseData()">Clear</button> 
+               </div>               
+               <hr>
+               <div class="form-check animated fadeInRight">
+                    <ul>
+                        <li>
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input input-box" id="stops"> Bus Stops
+                            </label>
+                        </li>
+                        <li>
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input input-box" id="vendingMachines"> Vending Machines
+                            </label>
+                        </li>
+                        <li>
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input input-box" id="routes"> Routes
+                            </label>
+                        </li>
+                    </ul>
+                    <br>
+                    <button type="submit" class="btn btn-outline-primary" onclick="getTransportation()">Transportation</button>      
+               </div>               
+               <hr>
+                <div class="card text-white border-success animated fadeInRight">
+                    <div class="card-body">
+                        <p>Are you buying apartment? Flat? House even? Do you have time to talk with you future neighbors? Of course not! Check all valuable information here! <a href="https://media.giphy.com/media/26DOs997h6fgsCthu/giphy.gif"><b>FairView</b></a> is here for you!</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+   <script src="public/script.js"></script>
+</html>
